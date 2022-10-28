@@ -1,12 +1,15 @@
+import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
+import 'package:infinity_learning_zone/pages/auth/login_page.dart';
 import 'package:infinity_learning_zone/pages/home/home_page.dart';
 import 'package:infinity_learning_zone/pages/profile/profile_page.dart';
 import 'package:infinity_learning_zone/pages/settingpage/setting_page.dart';
+import 'package:infinity_learning_zone/storage/get_storage_manager.dart';
 import 'package:infinity_learning_zone/util/connectivity_check.dart';
 import 'package:lottie/lottie.dart';
 
@@ -21,6 +24,13 @@ class _BasePageState extends State<BasePage> {
   var currentIndex = 0;
   final _pages = [const HomePage(), const ProfilePage(), const SettingPage()];
   final controller = Get.find<ConnectivityCheck>();
+
+  @override
+  void initState() {
+    super.initState();
+    log('loggedIn: ${GetStorageManager.isLoggedIn()}');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +44,9 @@ class _BasePageState extends State<BasePage> {
             padding: EdgeInsets.only(right: 10.w),
             child: GestureDetector(
               onTap: () {
-                Get.to(const ProfilePage());
+                // Get.to(const ProfilePage());
+                GetStorageManager.logOut();
+                Get.off(() => LoginPage());
               },
               child: CircleAvatar(
                 backgroundImage: AssetImage('images/avatar.jpg'),

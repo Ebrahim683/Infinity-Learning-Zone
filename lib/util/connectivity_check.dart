@@ -40,7 +40,7 @@ class ConnectivityCheck extends GetxController {
   void onInit() {
     super.onInit();
     initConnectivity();
-    connectivitySubscription =
-        connectivity.onConnectivityChanged.listen(updateConnectionStatus);
+    // connectivitySubscription =
+    //     connectivity.onConnectivityChanged.listen(updateConnectionStatus);
   }
 }

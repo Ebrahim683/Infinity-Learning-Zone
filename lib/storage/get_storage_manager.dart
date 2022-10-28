@@ -18,4 +18,8 @@ class GetStorageManager {
     }
     return false;
   }
+
+  static logOut() {
+    box.remove('token');
+  }
 }

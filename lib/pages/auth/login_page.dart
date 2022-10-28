@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_icons/icons8.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
@@ -26,10 +27,13 @@ class _LoginPageState extends State<LoginPage> {
   bool securePass = true;
   bool loading = false;
 
+  loginUser() {
+    GetStorageManager.saveToken('token');
+  }
+
   @override
   void initState() {
     super.initState();
-   
   }
 
   @override
@@ -109,13 +113,13 @@ class _LoginPageState extends State<LoginPage> {
                           GlassContainer(
                             height: 50.h,
                             width: 200.w,
-                            blur: 0,
+                            blur: 10,
                             border: 1,
                             child: MaterialButton(
                               onPressed: () {
                                 setState(() {
-                                  // loading = !loading;
-                                  GetStorageManager.saveToken('abc');
+                                  loading = !loading;
+                                  loginUser();
                                   Get.off(() => const BasePage());
                                 });
                               },
@@ -123,9 +127,18 @@ class _LoginPageState extends State<LoginPage> {
                                   ? const CircularProgressIndicator(
                                       color: Colors.white,
                                     )
-                                  : const Text(
-                                      'Log in',
-                                      style: TextStyle(color: Colors.white),
+                                  : Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Lottie.asset(Icons8.login,
+                                            height: 25, width: 25),
+                                        SizedBox(width: 5.w),
+                                        const Text(
+                                          'Log in',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ],
                                     ),
                             ),
                           ),

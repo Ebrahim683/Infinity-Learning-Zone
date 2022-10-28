@@ -17,8 +17,11 @@ dependencies:
   flutter_screenutil: ^5.5.4
   # glassmorphism
   glassmorphism_widgets: ^0.1.3
-  # lottie
+  # animation
   lottie: ^1.4.3
+  flutter_animated_icons: ^1.0.1
+  shimmer: ^2.0.0
+  loading_overlay: ^0.3.0
   # getx
   get: ^4.6.5
   # get storage

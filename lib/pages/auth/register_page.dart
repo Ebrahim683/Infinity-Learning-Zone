@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_icons/icons8.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
@@ -142,7 +143,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   GlassContainer(
                     height: 50.h,
                     width: 200.w,
-                    blur: 0,
+                    blur: 10,
                     border: 1,
                     child: MaterialButton(
                       onPressed: () {
@@ -154,9 +155,17 @@ class _RegisterPageState extends State<RegisterPage> {
                           ? const CircularProgressIndicator(
                               color: Colors.white,
                             )
-                          : const Text(
-                              'Register account',
-                              style: TextStyle(color: Colors.white),
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Lottie.asset(Icons8.icons8_box,
+                                    height: 25.h, width: 25.w),
+                                SizedBox(width: 5.w),
+                                const Text(
+                                  'Register account',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ],
                             ),
                     ),
                   ),
