@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:developer';
-
 import 'package:connectivity/connectivity.dart';
 import 'package:get/get.dart';
 

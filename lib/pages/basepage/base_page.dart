@@ -44,12 +44,12 @@ class _BasePageState extends State<BasePage> {
             padding: EdgeInsets.only(right: 10.w),
             child: GestureDetector(
               onTap: () {
-                // Get.to(const ProfilePage());
                 GetStorageManager.logOut();
-                Get.off(() => LoginPage());
+                Get.offAll(() => const LoginPage());
               },
-              child: CircleAvatar(
-                backgroundImage: AssetImage('images/avatar.jpg'),
+              child: const Icon(
+                Icons.logout,
+                color: Colors.white,
               ),
             ),
           ),
