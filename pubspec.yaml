@@ -34,7 +34,10 @@ dependencies:
   freezed_annotation: ^2.2.0
   freezed: ^2.3.2
   dio: ^4.0.6
+  # builder
   build_runner: ^2.3.3
+  # path
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:infinity_learning_zone/controllers/download/download_controller.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
