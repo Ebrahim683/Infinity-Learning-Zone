@@ -3,13 +3,22 @@ import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
 class DownloadController extends GetxController {
-  static var progress = ''.obs;
-  static var isDownloading = false.obs;
+  static DownloadController get to => Get.find();
+  final percent = 0.0.obs;
+  final progress = '0.0'.obs;
+  var isDownloading = false.obs;
+  final _downloadingIndex = <int>[].obs;
+  List<int> get downloadingIndex => _downloadingIndex;
 
-  static Future<void> downloadFile(
+  void setDownloadingIndex(int index) {
+    _downloadingIndex.add(index);
+  }
+
+  Future<void> downloadFile(
       {required String url,
       required String fileName,
-      required String endPoint}) async {
+      required String endPoint,
+      required int index}) async {
     Dio dio = Dio();
     String path = '/storage/emulated/0/Download/';
     String milisecond = DateTime.now().millisecondsSinceEpoch.toString();
@@ -21,17 +30,22 @@ class DownloadController extends GetxController {
         fullPath,
         onReceiveProgress: (count, total) {
           isDownloading.value = true;
-          progress.value =
-              '${((count / total) * 100).toStringAsFixed(0)}% downloaded';
+          percent.value = (count / total);
+          progress.value = ((count / total) * 100).toStringAsFixed(0);
           log(progress.value);
         },
       ).then((value) {
+        isDownloading.value = false;
+        percent.value = 0.0;
         log(value.toString());
       });
     } catch (e) {
       isDownloading.value = false;
+      percent.value = 0.0;
       log(e.toString());
     }
     isDownloading.value = false;
+    _downloadingIndex.remove(index);
+    percent.value = 0.0;
   }
 }

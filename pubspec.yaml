@@ -38,6 +38,10 @@ dependencies:
   build_runner: ^2.3.3
   # path
   path_provider: ^2.0.11
+  # progress
+  percent_indicator: ^4.2.2
+  # json serializable
+  json_serializable: ^6.5.4
 
 dev_dependencies:
   flutter_test:

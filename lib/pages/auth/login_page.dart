@@ -47,6 +47,11 @@ class _LoginPageState extends State<LoginPage> {
               ? Center(child: Lottie.asset('assets/notFoundAnimation.json'))
               : LoadingOverlay(
                   isLoading: AuthController.isLoading.value,
+                  progressIndicator: Lottie.asset(
+                    'assets/infinityCircle.json',
+                    height: 200,
+                    width: 200,
+                  ),
                   child: SingleChildScrollView(
                     child: Container(
                       width: Get.width,

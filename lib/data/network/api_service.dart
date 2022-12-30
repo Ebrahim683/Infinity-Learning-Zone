@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart' as dio;
 
 class ApiService {
-  static String baseUrl = '';
+  static String baseUrl = 'https://jsonplaceholder.typicode.com';
   static final _dio = dio.Dio();
 
   static Future<dynamic> getApi(String path, {body}) async {

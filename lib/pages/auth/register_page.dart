@@ -38,6 +38,11 @@ class _RegisterPageState extends State<RegisterPage> {
         child: Obx(
           () => LoadingOverlay(
             isLoading: AuthController.isLoading.value,
+            progressIndicator: Lottie.asset(
+              'assets/infinityCircle.json',
+              height: 200,
+              width: 200,
+            ),
             child: SingleChildScrollView(
               child: Container(
                 height: Get.height,

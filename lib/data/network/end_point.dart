@@ -1,1 +1,1 @@
-String get endPoint => '';
+String get postPoint => '/posts';

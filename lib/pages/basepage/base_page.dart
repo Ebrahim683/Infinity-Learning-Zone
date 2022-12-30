@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
 import 'package:infinity_learning_zone/pages/auth/login_page.dart';
 import 'package:infinity_learning_zone/pages/home/home_page.dart';
+import 'package:infinity_learning_zone/pages/pdf/pdf_page.dart';
 import 'package:infinity_learning_zone/pages/profile/profile_page.dart';
 import 'package:infinity_learning_zone/pages/settingpage/setting_page.dart';
 import 'package:infinity_learning_zone/storage/get_storage_manager.dart';
@@ -22,7 +23,12 @@ class BasePage extends StatefulWidget {
 
 class _BasePageState extends State<BasePage> {
   var currentIndex = 0;
-  final _pages = [const HomePage(), const ProfilePage(), const SettingPage()];
+  final _pages = [
+    const HomePage(),
+    const PdfPage(),
+    const ProfilePage(),
+    const SettingPage()
+  ];
   final controller = Get.find<ConnectivityCheck>();
 
   @override
@@ -93,9 +99,10 @@ class _BasePageState extends State<BasePage> {
                   Divider(height: 3.h, color: Colors.black54),
                   SizedBox(height: 10.h),
                   //widget item
-                  navList('Home', '', Icons.home, 0),
-                  navList('Profile', '', Icons.person, 1),
-                  navList('Setting', '', Icons.settings, 2),
+                  navList('Home', Icons.home, 0),
+                  navList('Download Pdf', Icons.picture_as_pdf, 1),
+                  navList('Profile', Icons.person, 2),
+                  navList('Setting', Icons.settings, 3),
                   //comunication item
                   // SizedBox(height: 5.h),
                   // Row(
@@ -123,7 +130,7 @@ class _BasePageState extends State<BasePage> {
   }
 
 //navigation drawer item
-  Widget navList(String title, String? subTitle, IconData leading, int index) {
+  Widget navList(String title, IconData leading, int index) {
     return GlassContainer(
       border: 1,
       borderRadius: BorderRadius.circular(5.r),
@@ -132,10 +139,12 @@ class _BasePageState extends State<BasePage> {
       child: ListTile(
         title: Text(
           title,
-          style: const TextStyle(color: Colors.black54),
+          style: const TextStyle(color: Colors.white),
         ),
-        subtitle: Text(subTitle!),
-        leading: Icon(leading),
+        leading: Icon(
+          leading,
+          color: Colors.white,
+        ),
         onTap: (() {
           setState(() {
             currentIndex = index;
