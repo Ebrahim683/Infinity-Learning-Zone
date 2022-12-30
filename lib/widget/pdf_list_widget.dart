@@ -1,8 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:infinity_learning_zone/constant/app_constant.dart';
 import 'package:infinity_learning_zone/controllers/download/download_controller.dart';
 import 'package:infinity_learning_zone/data/model/post_model.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -40,9 +42,12 @@ class _PdfListWidgetState extends State<PdfListWidget> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Icon(
-                    Icons.picture_as_pdf,
-                    color: Colors.white,
+                  const CircleAvatar(
+                    backgroundColor: Colors.black38,
+                    child: Icon(
+                      PhosphorIcons.file_pdf,
+                      color: Colors.white,
+                    ),
                   ),
                   Flexible(
                     child: Padding(
@@ -75,18 +80,27 @@ class _PdfListWidgetState extends State<PdfListWidget> {
                   ),
                   InkWell(
                     onTap: () {
-                      DownloadController.to.setDownloadingIndex(widget.index);
-                      String url =
-                          'https://firebasestorage.googleapis.com/v0/b/flutter-firebase-demo-6a207.appspot.com/o/Final%20syllabus%20Fall22.pdf?alt=media&token=f60c657f-98e5-4c2f-897b-a4ac35f3831c';
-                      DownloadController.to.downloadFile(
-                          index: widget.index,
-                          url: url,
-                          fileName: 'syl',
-                          endPoint: '.pdf');
+                      if (DownloadController.to.downloadingIndex
+                          .contains(widget.index)) {
+                        AppConstant.SnackBar('Downloading...',
+                            'This file is already downloading...');
+                      } else {
+                        DownloadController.to.setDownloadingIndex(widget.index);
+                        String url =
+                            'https://firebasestorage.googleapis.com/v0/b/flutter-firebase-demo-6a207.appspot.com/o/Final%20syllabus%20Fall22.pdf?alt=media&token=f60c657f-98e5-4c2f-897b-a4ac35f3831c';
+                        DownloadController.to.downloadFile(
+                            index: widget.index,
+                            url: url,
+                            fileName: 'syl',
+                            endPoint: '.pdf');
+                      }
                     },
-                    child: const Icon(
-                      Icons.download,
-                      color: Colors.white,
+                    child: const CircleAvatar(
+                      backgroundColor: Colors.red,
+                      child: Icon(
+                        PhosphorIcons.download,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
