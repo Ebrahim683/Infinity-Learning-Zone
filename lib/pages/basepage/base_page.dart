@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
+import 'package:infinity_learning_zone/data/model/user/user_model.dart';
 import 'package:infinity_learning_zone/pages/auth/login_page.dart';
 import 'package:infinity_learning_zone/pages/home/home_page.dart';
 import 'package:infinity_learning_zone/pages/pdf/pdf_page.dart';
@@ -12,6 +13,7 @@ import 'package:infinity_learning_zone/pages/profile/profile_page.dart';
 import 'package:infinity_learning_zone/pages/settingpage/setting_page.dart';
 import 'package:infinity_learning_zone/storage/get_storage_manager.dart';
 import 'package:infinity_learning_zone/util/connectivity_check.dart';
+import 'package:infinity_learning_zone/widget/drawer_header_widget.dart';
 import 'package:lottie/lottie.dart';
 
 class BasePage extends StatefulWidget {
@@ -78,50 +80,43 @@ class _BasePageState extends State<BasePage> {
         bottomRight: Radius.circular(20),
       ),
       child: Drawer(
-        child: SingleChildScrollView(
-          child: Container(
-            height: Get.height,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('images/hero.jpg'), fit: BoxFit.cover)),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaY: 3.0, sigmaX: 3.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  DrawerHeader(
-                    child: Column(
-                      children: const [
-                        Text('drawer header'),
-                      ],
+        child: Container(
+          height: Get.height,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('images/hero.jpg'), fit: BoxFit.cover)),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaY: 3.0, sigmaX: 3.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                SizedBox(
+                  height: Get.height / 3,
+                  child: const DrawerHeader(
+                    child: DrawerHeaderWidget(
+                      userModel: UserModel(
+                          id: '1',
+                          userName: 'Student',
+                          email: 'student1010@gmail.com',
+                          profilePic: 'images/avatar.jpg'),
                     ),
                   ),
-                  Divider(height: 3.h, color: Colors.black54),
-                  SizedBox(height: 10.h),
-                  //widget item
-                  navList('Home', Icons.home, 0),
-                  navList('Download Pdf', Icons.picture_as_pdf, 1),
-                  navList('Profile', Icons.person, 2),
-                  navList('Setting', Icons.settings, 3),
-                  //comunication item
-                  // SizedBox(height: 5.h),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //   children: [
-                  //     Text(
-                  //       'Contact Us',
-                  //       style: TextStyle(color: Colors.black54),
-                  //     ),
-                  //   ],
-                  // ),
-                  // Divider(height: 3.h, color: Colors.black54),
-                  // SizedBox(height: 5.h),
-
-                  // navList('Home', '', Icons.home, 0),
-                  // navList('Profile', '', Icons.person, 1),
-                  // navList('Setting', '', Icons.settings, 2),
-                ],
-              ),
+                ),
+                Divider(height: 3.h, color: Colors.black54),
+                SizedBox(height: 10.h),
+                //widget item
+                SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      navList('Home', Icons.home, 0),
+                      navList('Download Pdf', Icons.picture_as_pdf, 1),
+                      navList('Profile', Icons.person, 2),
+                      navList('Setting', Icons.settings, 3),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -141,9 +136,12 @@ class _BasePageState extends State<BasePage> {
           title,
           style: const TextStyle(color: Colors.white),
         ),
-        leading: Icon(
-          leading,
-          color: Colors.white,
+        leading: CircleAvatar(
+          backgroundColor: Colors.black38,
+          child: Icon(
+            leading,
+            color: Colors.white,
+          ),
         ),
         onTap: (() {
           setState(() {

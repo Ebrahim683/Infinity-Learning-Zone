@@ -25,7 +25,7 @@ class DownloadController extends GetxController {
     String fullPath = '$path$fileName-$milisecond$endPoint';
 
     try {
-      await dio.download(
+           await dio.download(
         url,
         fullPath,
         onReceiveProgress: (count, total) {
