@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
@@ -10,6 +11,7 @@ import 'package:infinity_learning_zone/pages/auth/login_page.dart';
 import 'package:infinity_learning_zone/pages/home/home_page.dart';
 import 'package:infinity_learning_zone/pages/pdf/pdf_page.dart';
 import 'package:infinity_learning_zone/pages/profile/profile_page.dart';
+import 'package:infinity_learning_zone/pages/quize/mcq_page.dart';
 import 'package:infinity_learning_zone/pages/settingpage/setting_page.dart';
 import 'package:infinity_learning_zone/storage/get_storage_manager.dart';
 import 'package:infinity_learning_zone/util/connectivity_check.dart';
@@ -29,7 +31,8 @@ class _BasePageState extends State<BasePage> {
     const HomePage(),
     const PdfPage(),
     const ProfilePage(),
-    const SettingPage()
+    const SettingPage(),
+    const MCQPage(),
   ];
   final controller = Get.find<ConnectivityCheck>();
 
@@ -113,6 +116,7 @@ class _BasePageState extends State<BasePage> {
                       navList('Download Pdf', Icons.picture_as_pdf, 1),
                       navList('Profile', Icons.person, 2),
                       navList('Setting', Icons.settings, 3),
+                      navList('MCQ', PhosphorIcons.exam, 4),
                     ],
                   ),
                 ),
