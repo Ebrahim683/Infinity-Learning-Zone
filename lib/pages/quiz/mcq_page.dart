@@ -17,6 +17,7 @@ class _MCQPageState extends State<MCQPage> {
   String valueTwo = 'II';
   String valueThree = 'III';
   String valueFour = 'IV';
+  String mark = '√';
   String selectedAns = '';
 
   String question = 'What is the name of our country?';
@@ -41,18 +42,22 @@ class _MCQPageState extends State<MCQPage> {
             children: [
               SizedBox(height: 70.h),
               Flexible(
-                child: Card(
-                  color: Colors.white.withOpacity(0.3),
-                  child: Container(
-                    height: Get.height,
-                    width: Get.width,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15.w),
+                  child: Card(
                     color: Colors.white.withAlpha(0),
-                    child: Center(
-                      child: Text(
-                        maxLines: 5,
-                        question,
-                        style: const TextStyle(color: Colors.black),
-                      ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Text(
+                            maxLines: 5,
+                            question,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -213,7 +218,6 @@ class _MCQPageState extends State<MCQPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 10.h),
             ],
           ),
         ),

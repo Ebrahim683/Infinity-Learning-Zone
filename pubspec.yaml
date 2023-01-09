@@ -1,12 +1,12 @@
 name: infinity_learning_zone
 description: A new Flutter project.
 
-publish_to: 'none' 
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.2 <3.0.0'
+  sdk: ">=2.18.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -45,10 +45,17 @@ dependencies:
   # icon
   flutter_phosphor_icons: ^0.0.1+6
   # notification
-  flutter_local_notifications: ^13.0.0
+  flutter_local_notifications:
+    ^13.0.0
+    # firebase
+  firebase_core: ^2.1.0
+  firebase_auth: ^4.0.2
+  firebase_database: ^10.0.2
+  firebase_storage: ^11.0.2
+  cloud_firestore: ^4.1.0
+  # google sign in
+  google_sign_in: ^5.4.2
 
-
-  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -56,15 +63,12 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-
   uses-material-design: true
 
   assets:
     - images/
     - assets/
 
-
-  
   # fonts:
   #   - family: Schyler
   #     fonts:
@@ -74,4 +78,3 @@ flutter:
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
-

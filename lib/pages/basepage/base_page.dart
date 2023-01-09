@@ -11,12 +11,13 @@ import 'package:infinity_learning_zone/pages/auth/login_page.dart';
 import 'package:infinity_learning_zone/pages/home/home_page.dart';
 import 'package:infinity_learning_zone/pages/pdf/pdf_page.dart';
 import 'package:infinity_learning_zone/pages/profile/profile_page.dart';
-import 'package:infinity_learning_zone/pages/quize/mcq_page.dart';
 import 'package:infinity_learning_zone/pages/settingpage/setting_page.dart';
 import 'package:infinity_learning_zone/storage/get_storage_manager.dart';
 import 'package:infinity_learning_zone/util/connectivity_check.dart';
 import 'package:infinity_learning_zone/widget/drawer_header_widget.dart';
 import 'package:lottie/lottie.dart';
+
+import '../quiz/mcq_page.dart';
 
 class BasePage extends StatefulWidget {
   const BasePage({super.key});
@@ -40,6 +41,7 @@ class _BasePageState extends State<BasePage> {
   void initState() {
     super.initState();
     log('loggedIn: ${GetStorageManager.isLoggedIn()}');
+    log('Token: ${GetStorageManager.getToken()}');
   }
 
   @override

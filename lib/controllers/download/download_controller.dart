@@ -9,7 +9,7 @@ class DownloadController extends GetxController {
   // var isDownloading = false.obs;
   final _downloadingIndex = <int>[].obs;
   List<int> get downloadingIndex => _downloadingIndex;
-
+ 
   void setDownloadingIndex(int index) {
     _downloadingIndex.add(index);
   }

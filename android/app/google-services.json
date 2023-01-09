@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "508993756896",
+    "project_id": "infinitylearningzone-a2cd5",
+    "storage_bucket": "infinitylearningzone-a2cd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508993756896:android:b8a431c4c07eb5fb9d7a85",
+        "android_client_info": {
+          "package_name": "com.example.infinity_learning_zone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508993756896-lpccq42bb0mmo93m032e00u0lg36l1u6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5SDCPdhJfwLb7IwhHdINzdOgYPOiET-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508993756896-lpccq42bb0mmo93m032e00u0lg36l1u6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
