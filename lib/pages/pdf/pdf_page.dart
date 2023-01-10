@@ -1,13 +1,12 @@
+import 'dart:developer';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:infinity_learning_zone/controllers/download/download_controller.dart';
 import 'package:infinity_learning_zone/controllers/postcontroller/post_controller.dart';
 import 'package:infinity_learning_zone/data/model/post_model.dart';
+import 'package:infinity_learning_zone/pages/pdf/pdf_shimmer.dart';
 import 'package:infinity_learning_zone/widget/pdf_list_widget.dart';
-import 'package:lottie/lottie.dart';
 
 class PdfPage extends StatefulWidget {
   const PdfPage({super.key});
@@ -17,6 +16,12 @@ class PdfPage extends StatefulWidget {
 }
 
 class _PdfPageState extends State<PdfPage> {
+  @override
+  void initState() {
+    super.initState();
+    log('pdf page');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +56,11 @@ class _PdfPageState extends State<PdfPage> {
                             ),
                           );
                         } else {
-                          return Center(
-                            child: Lottie.asset('assets/infinityCircle.json',
-                                height: 200, width: 200),
+                          return Column(
+                            children: List.generate(
+                              15,
+                              (index) => const PdfShimmer(),
+                            ),
                           );
                         }
                       },
