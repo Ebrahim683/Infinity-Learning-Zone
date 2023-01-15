@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:infinity_learning_zone/controllers/postcontroller/post_controller.dart';
 import 'package:infinity_learning_zone/data/model/post_model.dart';
 import 'package:infinity_learning_zone/pages/pdf/pdf_shimmer.dart';
-import 'package:infinity_learning_zone/widget/pdf_list_widget.dart';
+import 'package:infinity_learning_zone/pages/pdf/pdf_list_widget.dart';
 
 class PdfPage extends StatefulWidget {
   const PdfPage({super.key});

@@ -42,7 +42,23 @@ class _PdfShimmerState extends State<PdfShimmer> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 skeleton(45, 45, 50),
-                skeleton(60, Get.width / 1.4, 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 5.h),
+                      child: Align(
+                          alignment: Alignment.topCenter,
+                          child: skeleton(10, Get.width / 1.4, 8)),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 5.h),
+                      child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: skeleton(10, Get.width / 2, 8)),
+                    ),
+                  ],
+                ),
                 skeleton(45, 45, 50),
               ],
             ),

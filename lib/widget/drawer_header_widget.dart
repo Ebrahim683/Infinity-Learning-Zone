@@ -40,7 +40,7 @@ class DrawerHeaderWidget extends StatelessWidget {
                 SizedBox(width: 10.w),
                 Text(
                   userModel.userName.toString(),
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ],
             ),
@@ -58,7 +58,7 @@ class DrawerHeaderWidget extends StatelessWidget {
                 SizedBox(width: 10.w),
                 Text(
                   userModel.email.toString(),
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ],
             ),

@@ -101,7 +101,7 @@ class _BasePageState extends State<BasePage> {
                     child: DrawerHeaderWidget(
                       userModel: UserModel(
                           id: '1',
-                          userName: 'Student',
+                          userName: 'Md. Ebrahim Rahman',
                           email: 'student1010@gmail.com',
                           profilePic: 'images/avatar.jpg'),
                     ),
