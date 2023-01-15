@@ -170,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(5.0),
                                       child: Image.asset(
-                                        'images/google.png',
+                                        'icons/google.png',
                                         height: 25.h,
                                         width: 25.h,
                                       ),
@@ -187,7 +187,7 @@ class _LoginPageState extends State<LoginPage> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(5.0),
                                       child: Image.asset(
-                                        'images/facebook.png',
+                                        'icons/facebook.png',
                                         height: 25.h,
                                         width: 25.h,
                                       ),
@@ -204,7 +204,7 @@ class _LoginPageState extends State<LoginPage> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(5.0),
                                       child: Image.asset(
-                                        'images/twitter.png',
+                                        'icons/twitter.png',
                                         height: 25.h,
                                         width: 25.h,
                                       ),

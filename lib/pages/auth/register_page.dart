@@ -203,63 +203,63 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                       ),
                       SizedBox(height: 10.h),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              log('taped');
-                            },
-                            child: GlassContainer(
-                              blur: 0,
-                              border: 1,
-                              radius: 50.r,
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Image.asset(
-                                  'images/google.png',
-                                  height: 25.h,
-                                  width: 25.h,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 8.w),
-                          GestureDetector(
-                            onTap: () {},
-                            child: GlassContainer(
-                              blur: 0,
-                              border: 1,
-                              radius: 50.r,
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Image.asset(
-                                  'images/facebook.png',
-                                  height: 25.h,
-                                  width: 25.h,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 8.w),
-                          GestureDetector(
-                            onTap: () {},
-                            child: GlassContainer(
-                              blur: 0,
-                              border: 1,
-                              radius: 50,
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Image.asset(
-                                  'images/twitter.png',
-                                  height: 25.h,
-                                  width: 25.h,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   children: [
+                      //     GestureDetector(
+                      //       onTap: () {
+                      //         log('taped');
+                      //       },
+                      //       child: GlassContainer(
+                      //         blur: 0,
+                      //         border: 1,
+                      //         radius: 50.r,
+                      //         child: Padding(
+                      //           padding: const EdgeInsets.all(5.0),
+                      //           child: Image.asset(
+                      //             'icons/google.png',
+                      //             height: 25.h,
+                      //             width: 25.h,
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ),
+                      //     SizedBox(width: 8.w),
+                      //     GestureDetector(
+                      //       onTap: () {},
+                      //       child: GlassContainer(
+                      //         blur: 0,
+                      //         border: 1,
+                      //         radius: 50.r,
+                      //         child: Padding(
+                      //           padding: const EdgeInsets.all(5.0),
+                      //           child: Image.asset(
+                      //             'icons/facebook.png',
+                      //             height: 25.h,
+                      //             width: 25.h,
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ),
+                      //     SizedBox(width: 8.w),
+                      //     GestureDetector(
+                      //       onTap: () {},
+                      //       child: GlassContainer(
+                      //         blur: 0,
+                      //         border: 1,
+                      //         radius: 50,
+                      //         child: Padding(
+                      //           padding: const EdgeInsets.all(5.0),
+                      //           child: Image.asset(
+                      //             'icons/twitter.png',
+                      //             height: 25.h,
+                      //             width: 25.h,
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
                       SizedBox(height: 10.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
