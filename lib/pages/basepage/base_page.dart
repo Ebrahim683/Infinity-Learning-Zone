@@ -1,6 +1,4 @@
 import 'dart:developer';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,12 +9,14 @@ import 'package:infinity_learning_zone/pages/auth/login_page.dart';
 import 'package:infinity_learning_zone/pages/home/home_page.dart';
 import 'package:infinity_learning_zone/pages/pdf/pdf_page.dart';
 import 'package:infinity_learning_zone/pages/profile/profile_page.dart';
-import 'package:infinity_learning_zone/pages/settingpage/setting_page.dart';
+import 'package:infinity_learning_zone/pages/setting/setting_page.dart';
 import 'package:infinity_learning_zone/storage/get_storage_manager.dart';
 import 'package:infinity_learning_zone/util/connectivity_check.dart';
+import 'package:infinity_learning_zone/util/image_string.dart';
+import 'package:infinity_learning_zone/util/strings.dart';
+import 'package:infinity_learning_zone/widget/bg_page_widget.dart';
 import 'package:infinity_learning_zone/widget/drawer_header_widget.dart';
 import 'package:lottie/lottie.dart';
-
 import '../quiz/mcq_page.dart';
 
 class BasePage extends StatefulWidget {
@@ -51,7 +51,7 @@ class _BasePageState extends State<BasePage> {
       appBar: AppBar(
         backgroundColor: const Color(0x44000000),
         elevation: 0,
-        title: const Text('Infinity Learning Zone'),
+        title: Text(appTitle),
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 10.w),
@@ -85,42 +85,34 @@ class _BasePageState extends State<BasePage> {
         bottomRight: Radius.circular(20),
       ),
       child: Drawer(
-        child: Container(
-          height: Get.height,
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('images/hero.jpg'), fit: BoxFit.cover)),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaY: 3.0, sigmaX: 3.0),
+        child: BgPage.bgPage(
+          height: 0.h,
+          body: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 SizedBox(
                   height: Get.height / 3,
-                  child: const DrawerHeader(
+                  child: DrawerHeader(
                     child: DrawerHeaderWidget(
                       userModel: UserModel(
                           id: '1',
                           userName: 'Md. Ebrahim Rahman',
                           email: 'student1010@gmail.com',
-                          profilePic: 'images/avatar.jpg'),
+                          profilePic: avatarImage),
                     ),
                   ),
                 ),
-                Divider(height: 3.h, color: Colors.black54),
-                SizedBox(height: 10.h),
                 //widget item
-                SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
-                    children: [
-                      navList('Home', Icons.home, 0),
-                      navList('Download Pdf', Icons.picture_as_pdf, 1),
-                      navList('Profile', Icons.person, 2),
-                      navList('Setting', Icons.settings, 3),
-                      navList('MCQ', PhosphorIcons.exam, 4),
-                    ],
-                  ),
+                Column(
+                  children: [
+                    navList('Home', Icons.home, 0),
+                    navList('Download Pdf', Icons.picture_as_pdf, 1),
+                    navList('Profile', Icons.person, 2),
+                    navList('Setting', Icons.settings, 3),
+                    navList('MCQ', PhosphorIcons.exam, 4),
+                  ],
                 ),
               ],
             ),

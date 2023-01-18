@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:infinity_learning_zone/widget/bg_page_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,11 +26,13 @@ class _HomePageState extends State<HomePage> {
           ),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaY: 4.0, sigmaX: 4.0),
-            child: Column(
-              children: [
-                SizedBox(height: 70.h),
-                Text('HomePage'),
-              ],
+            child: BgPage.bgPage(
+              height: 70.h,
+              body: Column(
+                children: [
+                  Text('Home Page'),
+                ],
+              ),
             ),
           ),
         ),
