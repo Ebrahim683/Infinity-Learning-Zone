@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:infinity_learning_zone/data/model/user/user_model.dart';
+import 'package:infinity_learning_zone/util/image_string.dart';
 
 class DrawerHeaderWidget extends StatelessWidget {
-  final UserModel userModel;
-  const DrawerHeaderWidget({super.key, required this.userModel});
+  // final UsersModel userModel;
+  const DrawerHeaderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class DrawerHeaderWidget extends StatelessWidget {
                 radius: 40,
                 backgroundColor: Colors.white.withOpacity(0.4),
                 child: Image.asset(
-                  userModel.profilePic.toString(),
+                  avatarImage,
                   height: 45.h,
                   width: 45.w,
                 ),
@@ -39,7 +39,7 @@ class DrawerHeaderWidget extends StatelessWidget {
                 ),
                 SizedBox(width: 10.w),
                 Text(
-                  userModel.userName.toString(),
+                  ' userModel.userName.toString()',
                   style: const TextStyle(color: Colors.white),
                 ),
               ],
@@ -57,7 +57,7 @@ class DrawerHeaderWidget extends StatelessWidget {
                 ),
                 SizedBox(width: 10.w),
                 Text(
-                  userModel.email.toString(),
+                  'userModel.email.toString()',
                   style: const TextStyle(color: Colors.white),
                 ),
               ],

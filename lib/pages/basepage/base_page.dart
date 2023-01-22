@@ -1,10 +1,11 @@
 import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
-import 'package:infinity_learning_zone/data/model/user/user_model.dart';
+import 'package:infinity_learning_zone/data/model/user/users_model.dart';
 import 'package:infinity_learning_zone/pages/auth/login_page.dart';
 import 'package:infinity_learning_zone/pages/home/home_page.dart';
 import 'package:infinity_learning_zone/pages/pdf/pdf_page.dart';
@@ -17,6 +18,7 @@ import 'package:infinity_learning_zone/util/strings.dart';
 import 'package:infinity_learning_zone/widget/bg_page_widget.dart';
 import 'package:infinity_learning_zone/widget/drawer_header_widget.dart';
 import 'package:lottie/lottie.dart';
+
 import '../quiz/mcq_page.dart';
 
 class BasePage extends StatefulWidget {
@@ -95,13 +97,7 @@ class _BasePageState extends State<BasePage> {
                 SizedBox(
                   height: Get.height / 3,
                   child: DrawerHeader(
-                    child: DrawerHeaderWidget(
-                      userModel: UserModel(
-                          id: '1',
-                          userName: 'Md. Ebrahim Rahman',
-                          email: 'student1010@gmail.com',
-                          profilePic: avatarImage),
-                    ),
+                    child: Container(),
                   ),
                 ),
                 //widget item

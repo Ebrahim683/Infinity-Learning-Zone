@@ -1,12 +1,10 @@
 import 'dart:developer';
-import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:infinity_learning_zone/controllers/postcontroller/post_controller.dart';
-import 'package:infinity_learning_zone/data/model/post_model.dart';
-import 'package:infinity_learning_zone/pages/pdf/pdf_shimmer.dart';
+import 'package:infinity_learning_zone/controllers/postcontroller/users_model_controller.dart';
 import 'package:infinity_learning_zone/pages/pdf/pdf_list_widget.dart';
+import 'package:infinity_learning_zone/pages/pdf/pdf_shimmer.dart';
 import 'package:infinity_learning_zone/widget/bg_page_widget.dart';
 
 class PdfPage extends StatefulWidget {
@@ -34,15 +32,14 @@ class _PdfPageState extends State<PdfPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FutureBuilder(
-                future: PostController.getPost(),
+                future: UsersModelController.getAllUsers(),
                 builder: (context, snapshot) {
                   if (snapshot.data != null) {
-                    List<PostModel> pdfList = snapshot.data as List<PostModel>;
+                    // List<PostModel> pdfList = snapshot.data as List<PostModel>;
                     return Column(
                       children: List.generate(
-                        pdfList.length,
-                        (index) => PdfListWidget(
-                            postModel: pdfList[index], index: index),
+                        10,
+                        (index) => PdfListWidget(index: index),
                       ),
                     );
                   } else {

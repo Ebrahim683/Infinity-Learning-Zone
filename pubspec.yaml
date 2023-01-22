@@ -42,6 +42,8 @@ dependencies:
   percent_indicator: ^4.2.2
   # json serializable
   json_serializable: ^6.5.4
+  #json_annotation
+  json_annotation: ^4.8.0
   # icon
   flutter_phosphor_icons: ^0.0.1+6
   # notification

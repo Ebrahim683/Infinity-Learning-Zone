@@ -6,14 +6,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:infinity_learning_zone/constant/app_constant.dart';
 import 'package:infinity_learning_zone/controllers/download/download_controller.dart';
-import 'package:infinity_learning_zone/data/model/post_model.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class PdfListWidget extends StatefulWidget {
-  final PostModel postModel;
   final int index;
-  const PdfListWidget(
-      {super.key, required this.postModel, required this.index});
+  const PdfListWidget({super.key, required this.index});
 
   @override
   State<PdfListWidget> createState() => _PdfListWidgetState();
@@ -58,7 +55,7 @@ class _PdfListWidgetState extends State<PdfListWidget> {
                           Align(
                             alignment: Alignment.topLeft,
                             child: Text(
-                              widget.postModel.title.toString(),
+                              'Title',
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(color: Colors.white),
                             ),

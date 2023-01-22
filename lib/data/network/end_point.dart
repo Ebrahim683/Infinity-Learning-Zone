@@ -1,1 +1,1 @@
-String get postPoint => '/posts';
+String get users => '/users';
